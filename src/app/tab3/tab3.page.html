@@ -1,0 +1,127 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title size="large">
+            <span class="subtab-button active">Musique</span>
+            <span class="subtab-button">Podcoasts</span>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<super-tabs [activeTabIndex]="0" [config]="{ avoidElements: true, maxDragAngle: 30 }">
+    <super-tabs-toolbar slot="top" scrollable class="super-tabs-toolbar-custom">
+        <super-tab-button>
+            <ion-label>Playlists</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <ion-label>Artistes</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+            <ion-label>Albums</ion-label>
+        </super-tab-button>
+    </super-tabs-toolbar>
+
+    <super-tabs-container>
+        <super-tab>
+            <ion-content>
+                <div class="search-bar">
+                    <ion-row class="ion-align-items-center">
+                        <ion-col>
+                            <ion-searchbar placeholder="Chercher dans les playlists"></ion-searchbar>
+                        </ion-col>
+                        <ion-col size="auto">
+                            <ion-button color="light">
+                                Filtres
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+                <ion-list>
+                    <ion-item lines="none">
+                        <ion-thumbnail slot="start">
+                            <div class="add-thumnail">
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                        </ion-thumbnail>
+                        <ion-label>
+                            <h2><strong>Créer une playlist</strong></h2>
+                        </ion-label>
+                    </ion-item>
+
+                    <ion-item lines="none" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
+                        <ion-thumbnail slot="start">
+                            <img src="{{'assets/img/img_' + (i%5 + 1) + '.png'}}" alt="">
+                        </ion-thumbnail>
+                        <ion-label>
+                            <h2><strong>Playlist numero {{i + 1}}</strong></h2>
+                            <p>
+                                <ion-icon name="shuffle-outline"></ion-icon>
+                                28 songs
+                            </p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </super-tab>
+
+        <super-tab>
+            <ion-content>
+                <div class="search-bar">
+                    <ion-row class="ion-align-items-center">
+                        <ion-col>
+                            <ion-searchbar placeholder="Find in artists"></ion-searchbar>
+                        </ion-col>
+                        <ion-col size="auto">
+                            <ion-button color="light">
+                                Filtres
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+                <ion-list>
+                    <ion-item lines="none" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
+                        <ion-avatar slot="start">
+                            <img src="{{'assets/img/img_' + (i%5 + 1) + '.png'}}" alt="image de l'artiste">
+                        </ion-avatar>
+                        <ion-label>
+                            <h2><strong>Artiste {{i + 1}}</strong></h2>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </super-tab>
+
+        <super-tab>
+            <ion-content>
+                <div class="search-bar">
+                    <ion-row class="ion-align-items-center">
+                        <ion-col>
+                            <ion-searchbar placeholder="Find in albums"></ion-searchbar>
+                        </ion-col>
+                        <ion-col size="auto">
+                            <ion-button color="light">
+                                Filtres
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+                <ion-list>
+                    <ion-item lines="none" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]">
+                        <ion-thumbnail slot="start">
+                            <img src="{{'assets/img/img_' + (i%5 + 1) + '.png'}}" alt="">
+                        </ion-thumbnail>
+                        <ion-label>
+                            <h2><strong>Album numero {{i + 1}}</strong></h2>
+                            <p>
+                                <ion-icon name="shuffle-outline"></ion-icon>
+                                par Artiste
+                            </p>
+                        </ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </super-tab>
+        <super-tabs-container>
+            <super-tabs>

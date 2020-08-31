@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button color="dark">
+                <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="collection">
+        <div class="collection-title">
+            Ecoutés récemment
+        </div>
+
+        <div class="scroll-horizontal">
+            <div class="scroll-item size-sm" routerLink="playlist" *ngFor="let i of [0,1,2,3,4,5,6]">
+                <div class="card-thumbnail size-sm" [style.backgroundImage]="'url(assets/img/img_' + (i%5 + 1) + '.png)'"></div>
+                <div class="item-title">
+                    <ion-icon name="shuffle-outline"></ion-icon>
+                    Album {{i + 1}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collection">
+        <div class="collection-title">
+            Pour commencer
+        </div>
+
+        <div class="scroll-horizontal">
+            <div class="scroll-item size-md" routerLink="playlist" *ngFor="let i of [0,1,2,3,4,5,6]">
+                <div class="card-thumbnail size-md" [style.backgroundImage]="'url(assets/img/img_' + (i%5 + 1) + '.png)'"></div>
+                <div class="item-title">
+                    <ion-icon name="shuffle-outline"></ion-icon>
+                    Daily Mix {{i + 1}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collection">
+        <div class="collection-title">
+            Essayer autre chose
+        </div>
+
+        <div class="scroll-horizontal">
+            <div class="scroll-item size-md" routerLink="playlist" *ngFor="let i of [0,1,2,3,4,5,6]">
+                <div class="card-thumbnail size-md" [style.backgroundImage]="'url(assets/img/img_' + (i%5 + 1) + '.png)'"></div>
+                <div class="item-title">
+                    <ion-icon name="shuffle-outline"></ion-icon>
+                    Daily Mix {{i + 1}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="collection">
+        <div class="collection-title">
+            Basé sur vos récentes écoutes
+        </div>
+
+        <div class="scroll-horizontal">
+            <div class="scroll-item size-md" *ngFor="let i of [0,1,2,3,4,5,6]">
+                <div class="card-thumbnail size-md" [style.backgroundImage]="'url(assets/img/img_' + (i%5 + 1) + '.png)'"></div>
+                <div class="item-title">
+                    <ion-icon name="shuffle-outline"></ion-icon>
+                    Daily Mix {{i + 2}}
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
